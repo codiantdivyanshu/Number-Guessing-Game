@@ -23,3 +23,11 @@ while guess != secret_number:
             print(f"Correct! You guessed the number in {tries} tries.")
     except ValueError:
         print(" Please enter a valid number.")
+play_again = input("Do you want to play again? (yes/no): ").lower()
+if play_again == "yes":
+
+max_tries = 10
+if tries >= max_tries:
+    print(f"Game over! The number was {secret_number}.")
+    break
+
