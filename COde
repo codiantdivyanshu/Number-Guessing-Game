@@ -1,0 +1,78 @@
+import random
+import sys
+
+def welcome_message():
+    print("=" * 50)
+    print("🎯 Welcome to the Number Guessing Game!".center(50))
+    print("=" * 50)
+
+def choose_difficulty():
+    print("\nChoose a difficulty level:")
+    print("1. Easy (1-10)")
+    print("2. Medium (1-50)")
+    print("3. Hard (1-100)")
+
+    while True:
+        choice = input("Enter 1, 2 or 3: ")
+        if choice == '1':
+            return (1, 10, 5)
+        elif choice == '2':
+            return (1, 50, 7)
+        elif choice == '3':
+            return (1, 100, 10)
+        else:
+            print("❌ Invalid input. Please enter 1, 2, or 3.")
+
+def get_user_guess(min_val, max_val):
+    while True:
+        try:
+            guess = int(input(f"Enter your guess ({min_val}-{max_val}): "))
+            if min_val <= guess <= max_val:
+                return guess
+            else:
+                print(f"Please enter a number between {min_val} and {max_val}.")
+        except ValueError:
+            print("❌ That’s not a valid number!")
+
+def play_game():
+    welcome_message()
+    min_val, max_val, max_attempts = choose_difficulty()
+    number = random.randint(min_val, max_val)
+    attempts = 0
+
+    print(f"\nI'm thinking of a number between {min_val} and {max_val}.")
+    print(f"You have {max_attempts} attempts. Good luck!")
+
+    while attempts < max_attempts:
+        guess = get_user_guess(min_val, max_val)
+        attempts += 1
+
+        if guess < number:
+            print("🔻 Too low!")
+        elif guess > number:
+            print("🔺 Too high!")
+        else:
+            print(f"\n🎉 Correct! You guessed it in {attempts} tries.")
+            break
+    else:
+        print(f"\n❌ You've run out of attempts! The correct number was {number}.")
+
+def play_again():
+    while True:
+        replay = input("\nDo you want to play again? (y/n): ").lower()
+        if replay == 'y':
+            return True
+        elif replay == 'n':
+            print("👋 Thanks for playing! Goodbye.")
+            return False
+        else:
+            print("❌ Please enter 'y' or 'n'.")
+
+def main():
+    while True:
+        play_game()
+        if not play_again():
+            break
+
+if __name__ == "__main__":
+    main()
