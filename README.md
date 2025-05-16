@@ -24,6 +24,24 @@ A simple command-line number guessing game built in Python. The program randomly
 
 1. **Clone the repository:**
 
-```bash
-git clone https://github.com/YOUR-USERNAME/number-guessing-game.git
-cd number-guessing-game
+
+https://github.com/codiantdivyanshu/Number-Guessing-Game.git
+
+2. Run the game:
+
+python guess_game.py
+
+3. Example gameplay
+
+   🎯 Welcome to the Number Guessing Game!
+I'm thinking of a number between 1 and 100.
+Try to guess it!
+
+Enter your guess: 50
+Too low!
+
+Enter your guess: 75
+Too high!
+
+Enter your guess: 63
+🎉 Correct! You guessed it in 3 tries.
