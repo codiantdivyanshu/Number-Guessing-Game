@@ -45,3 +45,10 @@ Too high!
 
 Enter your guess: 63
 🎉 Correct! You guessed it in 3 tries.
+
+4. Project Structure
+
+├── code                   # 🎯 Main Python script
+├── README.md              # 📄 Project overview and instructions
+├── .gitignore             # 🚫 Files/folders to ignore in Git
+└── LICENSE                # 📜 Project license (e.g., MIT)
